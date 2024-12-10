@@ -25,5 +25,7 @@ func main() {
 		})
 	})
 	server.GET("/products", ProductController.GetProducts)
+	server.GET("/product/:productId", ProductController.GetProductById)
+	server.POST("/product", ProductController.CreateProduct)
 	server.Run(":8080")
 }
