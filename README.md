@@ -12,7 +12,7 @@ in that case project-name = main.go
 go mod init project-name
 //---- Install the libraries ----//
 go get github.com/gin-gonic/gin
-go get strconvs
+go get strconv
 got get net/http
 //---- Running the project ----//---- Navigate to the cmd file ----//
 cd cmd
