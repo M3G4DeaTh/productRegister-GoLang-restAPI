@@ -44,6 +44,38 @@ func (p *productController) CreateProduct(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, insertedProduct)
 }
 
+func (p *productController) UpdateProductById(ctx *gin.Context) {
+	var product model.Product
+	id := ctx.Param("productId")
+	err := ctx.BindJSON(&product)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, err)
+		return
+	}
+	if id == "" {
+		response := model.Response{
+			Message: "Id do produto não pode ser nulo",
+		}
+		ctx.JSON(http.StatusBadRequest, response)
+		return
+	}
+	productId, err := strconv.Atoi(id)
+	if err != nil {
+		response := model.Response{
+			Message: "Id do produto precisa ser um numero",
+		}
+		ctx.JSON(http.StatusBadRequest, response)
+		return
+	}
+	UpdatedProduct, err := p.productUseCase.UpdateProductById(productId, product)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, err)
+		return
+	}
+
+	ctx.JSON(http.StatusCreated, UpdatedProduct)
+}
+
 func (p *productController) GetProductById(ctx *gin.Context) {
 	id := ctx.Param("productId")
 	if id == "" {
