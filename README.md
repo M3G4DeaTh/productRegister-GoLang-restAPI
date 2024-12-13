@@ -8,13 +8,13 @@ To run, make sure that you have GoLang in your machine and run the follow comman
 
 in that case project-name = main.go
 
-//---- Projet init ----//
+---- Projet init ----
 go mod init project-name
-//---- Install the libraries ----//
+---- Install the libraries ----
 go get github.com/gin-gonic/gin
 go get strconv
 got get net/http
-//---- Running the project ----//---- Navigate to the cmd file ----//
+---- Running the project -------- Navigate to the cmd file ----
 cd cmd
 go run project-name
 
