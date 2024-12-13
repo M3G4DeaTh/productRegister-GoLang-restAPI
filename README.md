@@ -16,7 +16,7 @@ go mod init project-name
 ```
 go get github.com/gin-gonic/gin
 go get strconv
-got get net/http
+go get net/http
 ```
 
 ### Running the project (Navigate to the cmd file)
