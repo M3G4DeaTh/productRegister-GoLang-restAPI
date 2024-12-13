@@ -8,7 +8,7 @@ To run, make sure that you have GoLang in your machine and run the follow comman
 > [!TIP]
 >in that case project-name = main.go
 
-### Projet init 
+### Project init 
 ```
 go mod init project-name
 ```
